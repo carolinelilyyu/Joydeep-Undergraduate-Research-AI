@@ -117,3 +117,4 @@ with tf.Session() as session:
 	print("Model saved at: ", savedPath)
 
 #add accuracy and correct_predictions
+#testing
