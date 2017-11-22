@@ -12,7 +12,6 @@ from os.path import isfile, join
 from torch.utils.data.sampler import RandomSampler
 from torch.utils.data import Dataset
 import numpy as np
-import os
 #
 # # Training settings
 # parser = argparse.ArgumentParser(description='PyTorch MNIST Example')
@@ -41,12 +40,17 @@ class OwnDataset(Dataset):
         self.root_dir = root_dir
         Xdir = join(root_dir, 'X')
         Odir = join(root_dir, 'O')
+        Jdir = join(root_dir, '_')
         x_loaded_images = self.load_images(Xdir)
         o_loaded_images = self.load_images(Odir)
+        j_loaded_images = self.load_images(Jdir)
+
         x_labels = np.array([1]*x_loaded_images.shape[0], dtype = np.int)
         o_labels = np.array([0]*o_loaded_images.shape[0], dtype=np.int)
-        self.data = np.concatenate([x_loaded_images, o_loaded_images], axis=0)
-        self.labels = np.concatenate([x_labels, o_labels], axis=0)
+        j_labels = np.array([2]*j_loaded_images.shape[0], dtype=np.int)
+
+        self.data = np.concatenate([x_loaded_images, o_loaded_images, j_loaded_images], axis=0)
+        self.labels = np.concatenate([x_labels, o_labels, j_labels], axis=0)
 
     def __len__(self):
         return self.data.shape[0]
@@ -103,9 +107,9 @@ class Net(nn.Module):
 
 
 
-folders = ["O", "X"]
+folders = ["O", "X", "_"]
 datasetFolder = "train"
-testFolder = "letters"
+testFolder = "test"
 
 def getNumber(letter):
     if(letter == "O"):
@@ -113,6 +117,9 @@ def getNumber(letter):
         return np.eye(2, dtype=np.float32)[0]
     if(letter == "X"):
         return np.eye(2, dtype=np.float32)[1]
+    if(letter == "_"):
+        return np.eye(2, dtype=np.float32)[2]
+    
 
 
 # def getListOfImages():
@@ -273,7 +280,7 @@ if __name__=="__main__":
         model.cuda()
 
     train_dataset = OwnDataset('train/')
-    test_dataset = OwnDataset('letters/')
+    test_dataset = OwnDataset('test/')
     train_sampler = RandomSampler(train_dataset)
     test_sampler = RandomSampler(test_dataset)
     train_loader = torch.utils.data.DataLoader(train_dataset, sampler=train_sampler, batch_size=64)

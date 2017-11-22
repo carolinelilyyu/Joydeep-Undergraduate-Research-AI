@@ -8,7 +8,6 @@ from torch.autograd import Variable
 import argparse
 
 
-
 def predictLetter(imvalue, model):
 	#volatile: no gradient information computed for output. throws away gradient
 	imvalue = Variable(torch.from_numpy(imvalue),volatile=True).unsqueeze(0)#pytorch handles in graph in this line
@@ -73,7 +72,8 @@ def imageprepare(argv):
 def main(argv):
 	model = Net()
 	model.load_state_dict(torch.load("models/model.nn")) #variables of network. have all the weights
-	original_img = io.imread(argv, as_grey=True)
+	openImage = "board/" + argv
+	original_img = io.imread(openImage, as_grey=True)
 	resize_img = np.expand_dims(transform.resize(original_img, [28, 28]), 0).astype(np.float32)
 	#imvalue = imageprepare(argv)
 	predictedLetter = predictLetter(resize_img, model)
@@ -82,7 +82,7 @@ def main(argv):
 	elif(predictedLetter[0]==1):
 		print("the letter is X")
 	else:
-		print("the letter is neither O nor X")
+		print("the square is blank")
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='PyTorch MNIST Example')
