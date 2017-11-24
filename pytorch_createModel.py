@@ -40,17 +40,17 @@ class OwnDataset(Dataset):
         self.root_dir = root_dir
         Xdir = join(root_dir, 'X')
         Odir = join(root_dir, 'O')
-        Jdir = join(root_dir, '_')
+        BLANKdir = join(root_dir, '_')
         x_loaded_images = self.load_images(Xdir)
         o_loaded_images = self.load_images(Odir)
-        j_loaded_images = self.load_images(Jdir)
+        blank_loaded_images = self.load_images(BLANKdir)
 
-        x_labels = np.array([1]*x_loaded_images.shape[0], dtype = np.int)
-        o_labels = np.array([0]*o_loaded_images.shape[0], dtype=np.int)
-        j_labels = np.array([2]*j_loaded_images.shape[0], dtype=np.int)
+        blank_labels = np.array([0]*blank_loaded_images.shape[0], dtype=np.int)
+        o_labels = np.array([1]*o_loaded_images.shape[0], dtype=np.int)
+        x_labels = np.array([2]*x_loaded_images.shape[0], dtype = np.int)
 
-        self.data = np.concatenate([x_loaded_images, o_loaded_images, j_loaded_images], axis=0)
-        self.labels = np.concatenate([x_labels, o_labels, j_labels], axis=0)
+        self.data = np.concatenate([x_loaded_images, o_loaded_images, blank_loaded_images], axis=0)
+        self.labels = np.concatenate([x_labels, o_labels, blank_labels], axis=0)
 
     def __len__(self):
         return self.data.shape[0]
@@ -112,12 +112,12 @@ datasetFolder = "train"
 testFolder = "test"
 
 def getNumber(letter):
+    if(letter == "_"):
+        return np.eye(2, dtype=np.float32)[0]
     if(letter == "O"):
         #returns the first row of a 2-d array with ones in the diagonal and zeros elsewhere
-        return np.eye(2, dtype=np.float32)[0]
-    if(letter == "X"):
         return np.eye(2, dtype=np.float32)[1]
-    if(letter == "_"):
+    if(letter == "X"):
         return np.eye(2, dtype=np.float32)[2]
     
 
