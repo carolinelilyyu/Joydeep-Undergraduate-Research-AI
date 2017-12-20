@@ -16,6 +16,7 @@ Part of my undergraduate research for Joydeep Biswas 2017 (UMass Amherst). This 
 - **PyTorch** Framework used for machine-learning for character recognition for X and O
 [[PyTorch website]](http://pytorch.org/)
 - **Tensorflow** Framework used for machine-learning (am not using Tensorflow, but you can switch to it if you'd like). I've also provided some code for Tensorflow, since I attempted it before switching over to PyTorch. The Tensorflow code is commented out inside the pytorch python files, but they can also be found in predict.py and deep-createmodel.py
+[[Tensorflow website]](https://www.tensorflow.org/)
 - **EMNIST Dataset** Training data, provided by NIST, I used for the character recognition machine learning part. Contains many png pictures of characters
 [[EMNIST Dataset]](https://www.nist.gov/itl/iad/image-group/emnist-dataset)
 - **ZMQ Basics: Hello World for Python**
@@ -49,5 +50,5 @@ In this code, we are using a socket to communicate Python to C++ and vice versa.
 
 
 ## Major Bugs
-- QT/C++ Bug (GUI): As said before, *system*, or executing shell/terminal commands within the C++ code makes the GUI hang even though it is correctly executing the python script. You can confirm this because the QT IDE prints out the Python code's print statements, but starts hanging halfway through the execution. I've commented out the command execution code part for now until you choose to uncomment it and play around with it so you'll have to start up the python script manually and press Enter after you draw and save.
+- QT/C++ Bug (GUI): As said before, *system*, or executing shell/terminal commands within the C++ code makes the GUI hang even though it is correctly executing the python script. You can confirm this because the QT IDE prints out the Python code's print statements, but starts hanging halfway through the execution. I've commented out the command execution code part for now until you choose to uncomment it and play around with it so you'll have to start up the python script manually and press Enter after you draw and save. Therefore, this code is not automated.
 - Python Bug (AI): Code does not play tic tac toe optimally. Please look at the minimax algorithm within the Python code, or Joydeep-Undergraduate-Research-AI, to debug why it's not doing so. I've also provided a tutorial about how minimax works and the pseudocode I followed under the downloads/links inside the Joydeep-Undergraduate-Research-AI repo. Through the print statements, you can see it trying different game states to see what's the optimal path, but it always just ends up choosing the next available free position, or next square.
