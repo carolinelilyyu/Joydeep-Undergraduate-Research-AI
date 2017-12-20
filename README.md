@@ -8,7 +8,6 @@ Part of my undergraduate research for Joydeep Biswas 2017 (UMass Amherst). This 
 - AI: Artificial intelligence: the computer program
 - GUI: Graphical User Interface
 - Human: User who is using the program
-- Pytorch: A framework used for machine-learning. Machine learning is used for character recognition between an X and O. It is an easier version of Tensorflow
 
 ## Downloads/Links to help
 - **ZeroMQ/ZMQ** - Platform to connect C++ code to Python code
@@ -56,3 +55,4 @@ In this code, we are using a socket to communicate Python to C++ and vice versa.
 ## Major Bugs
 - QT/C++ Bug (GUI): As said before, *system*, or executing shell/terminal commands within the C++ code makes the GUI hang even though it is correctly executing the python script. You can confirm this because the QT IDE prints out the Python code's print statements, but starts hanging halfway through the execution. I've commented out the command execution code part for now until you choose to uncomment it and play around with it so you'll have to start up the python script manually and press Enter after you draw and save. Therefore, this code is not automated.
 - Python Bug (AI): Code does not play tic tac toe optimally. Please look at the minimax algorithm within the Python code, or Joydeep-Undergraduate-Research-AI, to debug why it's not doing so. I've also provided a tutorial about how minimax works and the pseudocode I followed under the downloads/links inside the Joydeep-Undergraduate-Research-AI repo. Through the print statements, you can see it trying different game states to see what's the optimal path, but it always just ends up choosing the next available free position, or next square.
+- After the a win or draw has been declared, the GUI hangs at times and sometimes it doesn't; however, on the Python side, the terminal would show who won.
