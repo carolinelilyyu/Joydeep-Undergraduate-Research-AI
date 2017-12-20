@@ -1,6 +1,8 @@
 # Joydeep-Undergraduate-Research-AI
 
-Part of my undergraduate research for Joydeep Biswas 2017 (UMass Amherst). This repo handles image detection/machine learning using Pytorch. It also handles the minimax algorithm or AI's turn for Tic Tac Toe. This was written in Python and communicates to C++ or Joydeep-Undergraduate-Research-GUI-Tic-Tac-Toe through ZMQ
+Part of my undergraduate research for Joydeep Biswas 2017 (UMass Amherst). This repo handles image detection/machine learning using Pytorch. It also handles the minimax algorithm or AI's turn for Tic Tac Toe. This was written in Python and communicates to C++ or Joydeep-Undergraduate-Research-GUI-Tic-Tac-Toe through ZMQ. Configuring the code to work with your machine will be essential; for example, certain file locations are configured to the creator's desktop: "/User/carolineyu/Documents/....". Change these paths/directories in the code (pytorch_predict.py) to match where your file locations will exist.
+
+
 
 ## Terminology
 - AI: Artificial intelligence: the computer program
