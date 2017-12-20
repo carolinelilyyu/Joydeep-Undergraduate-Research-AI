@@ -15,15 +15,15 @@ Part of my undergraduate research for Joydeep Biswas 2017 (UMass Amherst). This 
 [[ZeroMQ]](http://zeromq.org/)
 - **Minimax Algorithm** - A tutorial I followed to implement the minimax algorithm
 [[Minimax Algorithm]](http://www.sarathlakshman.com/2011/04/29/writing-a-tic-tac)
-- **PyTorch** Framework used for machine-learning for character recognition for X and O. It is a cousin of lua-based Torch framework which is actively used at Facebook. If you want a simple framework to use to get the job done easier than Tensorflow, PyTorch is the framework for you.
+- **PyTorch** - Framework used for machine-learning for character recognition for X and O. It is a cousin of lua-based Torch framework which is actively used at Facebook. If you want a simple framework to use to get the job done easier than Tensorflow, PyTorch is the framework for you.
 [[PyTorch website]](http://pytorch.org/)
-- **EMNIST Dataset** Training data, provided by NIST, I used for the character recognition machine learning part. Contains many png pictures of characters
+- **EMNIST Dataset** - Training data, provided by NIST, I used for the character recognition machine learning part. Contains many png pictures of characters
 [[EMNIST Dataset]](https://www.nist.gov/itl/iad/image-group/emnist-dataset)
 - **ZMQ Basics: Hello World for Python**
 [[Hello World Python ZMQ Example]](http://zguide.zeromq.org/py:hwclient)
-- **PyCharm** IDE I used for editting things in Python/PyTorch. Can execute terminal through here too. It's a lot prettier than writing in Sublime text editor, I'll give you that.
+- **PyCharm** - IDE I used for editting things in Python/PyTorch. Can execute terminal through here too. It's a lot prettier than writing in Sublime text editor, I'll give you that.
 [[PyCharm]](https://www.jetbrains.com/pycharm/)
-- **Tensorflow (OPTIONAL)** Framework used for machine-learning and can also be used for character recognition for X and O. It was developed by Google Brain and actively used at Google. I've also provided some code for Tensorflow, since I attempted it before switching over to PyTorch. The Tensorflow code is commented out inside the PyTorch files, but they can also be found in predict.py and deep-createmodel.py. If you want a deeper understanding of how tensors work and deep learning, TensorFlow is the framework for you.
+- **Tensorflow (OPTIONAL)** - Framework used for machine-learning and can also be used for character recognition for X and O. It was developed by Google Brain and actively used at Google. I've also provided some code for Tensorflow, since I attempted it before switching over to PyTorch. The Tensorflow code is commented out inside the PyTorch files, but they can also be found in predict.py and deep-createmodel.py. If you want a deeper understanding of how tensors work and deep learning, TensorFlow is the framework for you.
 [[Tensorflow website]](https://www.tensorflow.org/)
 - **Understanding Tensorflow: MNIST examples (OPTIONAL)**
 [[MNIST for Beginners: Lower Accuracy]](https://www.tensorflow.org/get_started/mnist/beginners)
